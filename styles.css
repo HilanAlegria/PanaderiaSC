@@ -1,0 +1,201 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e44d26; /* Un color representativo de panadería */
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 1.5em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e44d26;
+}
+
+main {
+    padding: 2em;
+}
+
+.hero {
+    background-color: #f9f9f9;
+    padding: 3em;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    display: inline-block;
+    background-color: #e44d26;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #d14320;
+}
+
+.destacados {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    margin-top: 1.5em;
+}
+
+.producto {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.producto h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.producto p {
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.precio {
+    font-weight: bold;
+    color: #e44d26;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.ubicacion {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.mapa {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+.social a {
+    color: #fff;
+    margin: 0 0.5em;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 1em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-left: 0;
+        margin-bottom: 0.5em;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1;
+        margin-bottom: 1.5em;
+    }
+}
