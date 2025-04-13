@@ -107,9 +107,30 @@ main {
 
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2em;
     margin-top: 1.5em;
+}
+
+/* Media query para pantallas más grandes (donde quieres 4 por fila) */
+@media (min-width: 992px) { /* Ajusta el ancho según necesites */
+    .productos-grid {
+        grid-template-columns: repeat(4, 1fr); /* Fuerza 4 columnas iguales */
+    }
+}
+
+/* Media query para pantallas medianas (podrías querer 2 o 3 por fila) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .productos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Vuelve a auto-ajuste para 2 o 3 */
+    }
+}
+
+/* Para pantallas más pequeñas (móviles), generalmente 1 por fila está bien */
+@media (max-width: 767px) {
+    .productos-grid {
+        grid-template-columns: 1fr; /* Una columna */
+    }
 }
 
 .producto {

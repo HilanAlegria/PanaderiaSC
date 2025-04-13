@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nosotros.css"> </head>
+    <style>
+        .nosotros-page {
+            padding: 2em;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 2em;
+        }
+
+        .nosotros-page h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5em;
+        }
+
+        .nosotros-content {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .nosotros-content p {
+            margin-bottom: 1em;
+        }
+
+        .nosotros-image {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        .nosotros-image img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-section {
+            margin-top: 2em;
+        }
+
+        .team-section h3 {
+            color: #e44d26;
+            margin-bottom: 1em;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5em;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.5em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member h4 {
+            color: #333;
+            margin-bottom: 0.2em;
+        }
+
+        .team-member p.role {
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">SABOR CALEÑO</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/menu.html" target="_blank">Menú</a></li>
+                <li><a href="/nosotros.html" target="_blank">Nosotros</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+                <li><a href="/pedidos.html">Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="nosotros-page">
+        <section class="nosotros-content">
+            <h2>Sobre Nosotros - Sabor Caleño</h2>
+            <div class="nosotros-image">
+                <img src="imagenes/historia-panaderia.jpg" alt="Historia de la Panadería">
+            </div>
+            <p>Bienvenidos a Sabor Caleño, tu panadería artesanal en el corazón de Cali. Fundada en [Año de Fundación], nuestra pasión siempre ha sido ofrecer productos horneados con el sabor auténtico de nuestra región, utilizando ingredientes frescos y recetas tradicionales transmitidas de generación en generación.</p>
+            <p>En Sabor Caleño, creemos que el aroma del pan recién horneado tiene el poder de unir a las personas y crear momentos especiales. Desde nuestros crujientes panes campesinos hasta nuestras deliciosas tortas de chocolate y los inconfundibles pandebonos, cada producto es elaborado con dedicación y cariño por nuestros panaderos expertos.</p>
+            <p>Estamos comprometidos con la calidad y la frescura. Nos esforzamos por utilizar ingredientes locales siempre que sea posible, apoyando a nuestra comunidad y garantizando el mejor sabor en cada bocado. Nuestra misión es endulzar tus días y compartir contigo la tradición y el sabor único de la panadería caleña.</p>
+
+            <section class="team-section">
+                <h3>Nuestro Equipo</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="imagenes/panadero1.jpg" alt="Panadero 1">
+                        <h4>[Nombre Panadero 1]</h4>
+                        <p class="role">Panadero Principal</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="imagenes/pastelero1.jpg" alt="Pastelero 1">
+                        <h4>[Nombre Pastelero 1]</h4>
+                        <p class="role">Pastelero</p>
+                    </div>
+                    </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>© [Año] Sabor Caleño. Todos los derechos reservados.</p>
+        <div class="social">
+            <a href="#">[Icono Facebook]</a>
+            <a href="#">[Icono Instagram]</a>
+        </div>
+    </footer>
+</body>
+</html>

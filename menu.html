@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Sabor Caleño</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-page .menu-section {
+            padding: 2em;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 2em;
+        }
+
+        .menu-page .menu-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5em;
+        }
+
+        .menu-page .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5em;
+        }
+
+        /* Media query para pantallas más grandes (4 por fila en el menú) */
+        @media (min-width: 768px) { /* Ajusta el ancho si es necesario */
+            .menu-page .menu-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .menu-page .menu-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5em;
+            text-align: center; /* Centrar contenido dentro del item */
+        }
+
+        .menu-page .menu-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1em;
+        }
+
+        .menu-page .menu-item h3 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            color: #333;
+        }
+
+        .menu-page .menu-item p {
+            color: #666;
+            margin-bottom: 0.5em;
+        }
+
+        .menu-page .menu-item .precio {
+            font-weight: bold;
+            color: #e44d26;
+            display: block; /* Para que ocupe toda la línea */
+            margin-bottom: 0.5em;
+        }
+
+        .menu-page .menu-item button {
+            background-color: #e44d26;
+            color: #fff;
+            padding: 0.8em 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em; /* Ajustar tamaño de fuente si es necesario */
+        }
+
+        .menu-page .menu-item button:hover {
+            background-color: #d14320;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">SABOR CALEÑO</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/menu.html" target="_blank">Menú</a></li>
+                <li><a href="/nosotros.html">Nosotros</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+                <li><a href="/pedidos.html">Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="menu-page">
+        <section class="menu-section">
+            <h2>Nuestro Delicioso Menú</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="imagenes/Pan campesino colombiano.jpeg" alt="Pan Campesino Colombiano">
+                    <h3>Pan Campesino Colombiano</h3>
+                    <p>El pan tradicional con un sabor inigualable.</p>
+                    <span class="precio">$2.500</span>
+                </div>
+                <div class="menu-item">
+                    <img src="imagenes/Croissant de Almendras.jpeg" alt="Croissant de Almendras">
+                    <h3>Croissant de Almendras</h3>
+                    <p>Un hojaldre relleno de crema de almendras y cubierto de láminas.</p>
+                    <span class="precio">$4.000</span>
+                </div>
+                <div class="menu-item">
+                    <img src="imagenes/Pan frances.jpeg" alt="Pan Frances">
+                    <h3>Pan Frances</h3>
+                    <p>"Pan crujiente por fuera y suave por dentro"</p>
+                    <span class="precio">$0.50</span>
+                </div>
+                <div class="menu-item">
+                    <img src="imagenes/torta de chocolate.jpeg" alt="Torta de Chocolate">
+                    <h3>Torta de Chocolate</h3>
+                    <p>"Deliciosa torta de chocolate con relleno cremoso."</p>
+                    <span class="precio">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <img src="imagenes/galletas de avena.jpeg" alt="Galletas de Avena">
+                    <h3>Galletas de Avena</h3>
+                    <p>Galletas saludables con hojuelas de avena y pasas</p>
+                    <span class="precio">$0.75</span>
+                </div>
+                <div class="menu-item">
+                    <img src="imagenes/pastel de avena.jpeg" alt="Producto 3">
+                    <h3>Pastel de Avena</h3>
+                    <p>Rico y delicioso, saludable y apetitoso, pastel de avena, para todos los gustos</p>
+                    <span class="precio">$12.75</span>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© [Año] Sabor Caleño. Todos los derechos reservados.</p>
+        <div class="social">
+            <a href="#">[Icono Facebook]</a>
+            <a href="#">[Icono Instagram]</a>
+        </div>
+    </footer>
+</body>
+</html>

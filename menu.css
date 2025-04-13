@@ -1,0 +1,50 @@
+.menu-section {
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+.menu-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5em;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+}
+
+/* Media query para pantallas más grandes (4 por fila en el menú) */
+@media (min-width: 768px) { /* Ajusta el ancho si es necesario */
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.menu-item p {
+    color: #666;
+    margin-bottom: 0.5em;
+}
+
+.menu-item .precio {
+    font-weight: bold;
+    color: #e44d26;
+}
+
+/* Puedes agregar más estilos específicos para la página del menú aquí */
