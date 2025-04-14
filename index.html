@@ -5,17 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panadería "Sabor Caleño" en Cali</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos básicos para la sección "Sobre Nosotros" en la página principal */
+        .sobre-nosotros-principal {
+            background-color: #f9f9f9;
+            padding: 2em;
+            border-radius: 8px;
+            margin-bottom: 2em;
+            text-align: center;
+        }
+
+        .sobre-nosotros-principal h2 {
+            color: #e44d26;
+            margin-bottom: 1em;
+        }
+
+        .sobre-nosotros-principal p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        .sobre-nosotros-principal .button {
+            display: inline-block;
+            background-color: #e44d26;
+            color: #fff;
+            padding: 0.8em 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sobre-nosotros-principal .button:hover {
+            background-color: #d14320;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="/">SABOR CALEÑO</a>
+            <img src="imagenes/Logo Sabor Caleño.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+            <a href="/">PANADERIA SABOR CALEÑO</a>
         </div>
         <nav>
             <ul>
-                <li><a href="/">Inicio</a></li> 
+                <li><a href="/">Inicio</a></li>
                 <li><a href="/menu.html" target="_blank">Menú</a></li>
-                <li><a href="/nosotros.html" target="_blank">Nosotros</a></li>
                 <li><a href="/contacto.html">Contacto</a></li>
                 <li><a href="/pedidos.html">Pedidos</a></li>
             </ul>
@@ -27,7 +62,7 @@
             <div class="hero-content">
                 <h1>En tu panaderia "Sabor Caleño" en Cali</h1>
                 <p>Disfruta de nuestros panes recién horneados, deliciosos pasteles y mucho más.</p>
-                <button id="ver-menu-btn" class="button">Ver Nuestro Menú</button>
+
             </div>
             <div class="hero-image">
                 <img src="imagenes/descargar.jpeg" alt="Variedad de panes deliciosos">
@@ -42,13 +77,6 @@
                     <h3>Pan Frances</h3>
                     <p>"Pan crujiente por fuera y suave por dentro"</p>
                     <span class="precio">$0.50</span>
-                    <button class="button">Añadir al Carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="imagenes/torta de chocolate.jpeg" alt="Producto 2">
-                    <h3>Torta de Chocolate</h3>
-                    <p>"Deliciosa torta de chocolate con relleno cremoso."</p>
-                    <span class="precio">$15.00</span>
                     <button class="button">Añadir al Carrito</button>
                 </div>
                 <div class="producto">
@@ -67,6 +95,14 @@
                 </div>
             </div>
         </section>
+        <section class="sobre-nosotros-principal">
+            <h2>Sobre Nosotros</h2>
+            <p>Descubre la pasión y tradición que impulsan a Panadería Sabor Caleño.
+                Desde nuestros humildes comienzos en [Año de Fundación], nos hemos dedicado a ofrecer a Cali el sabor auténtico de nuestros panes y pasteles artesanales.</p>
+            <p>Nuestros valores fundamentales son la calidad de nuestros ingredientes, el respeto por las recetas tradicionales y el compromiso con la satisfacción de nuestros clientes. Creemos en la importancia de ser parte de la comunidad caleña, ofreciendo un lugar donde el aroma del pan recién horneado evoca hogar y celebración.</p>
+            <p><strong>Misión:</strong> Deleitar a nuestros clientes con productos de panadería y pastelería de alta calidad, elaborados con pasión y dedicación, manteniendo viva la tradición caleña.</p>
+            <p><strong>Visión:</strong> Ser la panadería artesanal preferida en Cali, reconocida por nuestro sabor auténtico, la calidad de nuestros productos y nuestro compromiso con la comunidad.</p>
+        </section>
         <section class="ubicacion">
             <h2>Visítanos en Cali</h2>
             <div class="mapa">
@@ -80,7 +116,7 @@
     </main>
 
     <footer>
-        <p>© [Año] Sabor Caleño. Todos los derechos reservados.</p>
+        <p>© [2025] Sabor Caleño. Todos los derechos reservados.</p>
         <div class="social">
             <a href="#">[Icono Facebook]</a>
             <a href="#">[Icono Instagram]</a>
