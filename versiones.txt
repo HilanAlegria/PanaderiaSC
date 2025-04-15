@@ -1,0 +1,7 @@
+0016405e90bc4cd4bc6476f02b607ee504bbbecb
+version 1.0
+
+git log-> ver versiones
+git add . -> añadir cambios al comit
+git -- resert 
+git push origin main/master
