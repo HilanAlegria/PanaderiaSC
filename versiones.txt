@@ -10,4 +10,5 @@ añadir cambios -> versionar
 
 git log-> ver versiones
 git add . -> añadir cambios al comit
+git commit -m "version"
 git push origin main/master
