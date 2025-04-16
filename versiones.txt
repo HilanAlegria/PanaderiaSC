@@ -1,7 +1,13 @@
 0016405e90bc4cd4bc6476f02b607ee504bbbecb
 version 1.0
 
+ade27a0280315d3850d95a90979236a0eda01e05
+version 1.1
+
+
+añadir cambios -> versionar
+
+
 git log-> ver versiones
 git add . -> añadir cambios al comit
-git -- resert 
 git push origin main/master
