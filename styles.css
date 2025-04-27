@@ -265,6 +265,39 @@ footer {
     opacity: 1;
 }
 
+.btn-eliminar {
+    margin-left: 1em;
+    background-color: #e44d26;
+    color: white;
+    border: none;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#total-pedido {
+    margin-top: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+}
+
+.btn-finalizar {
+    margin-top: 1em;
+    padding: 0.7em 1.5em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-finalizar:hover {
+    background-color: #45a049;
+}
+
 /* Media Queries para Responsividad (Pantallas Pequeñas - Celulares) */
 @media (max-width: 600px) {
     header {
@@ -340,4 +373,31 @@ footer {
         width: 100%;
         height: 300px; /* Ajusta la altura del mapa en móviles */
     }
+}
+
+.pedidos-section {
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.pedidos-section h2 {
+    color: #e44d26;
+    margin-bottom: 1em;
+}
+
+.pedidos-section p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+
+.pedidos-opciones {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-top: 1.5em;
 }
