@@ -6,8 +6,8 @@
     <title>Panadería "Sabor Caleño" en Cali</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* ... otros estilos ... */
-    
+ 
+ 
         /* Estilos para el contenedor del menú cargado */
         #contenedor-menu {
             padding: 2em;
@@ -15,8 +15,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 2em;
-            margin-top: 2em; /* Añade un margen superior para separarlo del contenido anterior */
-            /* Opcional: Puedes agregar un borde superior destacado */
+            margin-top: 2em;
             border-top: 3px solid #d4a373;
         }
     
@@ -39,7 +38,6 @@
             <ul>
                 <li><a href="/PanaderiaSC">Inicio</a></li>
                 <li><a href="/PanaderiaSC/menu.html" id="cargar-menu">Menú</a></li>
-                <li><a href="/PanaderiaSC/pedidos.html">Pedidos</a></li>
             </ul>
         </nav>
     </header>
@@ -63,29 +61,25 @@
                     <img src="imagenes/pan frances.jpeg" alt="Pan Francés">
                     <h3>Pan Francés</h3>
                     <p>Crujiente por fuera, suave por dentro. Un clásico irresistible.</p>
-                    <span class="precio">$0.50</span>
-                    <button class="button">Añadir al Carrito</button>
+                    <span class="precio">$4.000</span>
                 </div>
                 <div class="producto">
                     <img src="imagenes/torta de chocolate.jpeg" alt="Torta de Chocolate">
                     <h3>Torta de Chocolate</h3>
                     <p>Un deleite cremoso y profundo sabor a chocolate.</p>
-                    <span class="precio">$15.00</span>
-                    <button class="button">Añadir al Carrito</button>
+                    <span class="precio">$5.000</span>
                 </div>
                 <div class="producto">
                     <img src="imagenes/galletas de avena.jpeg" alt="Galletas de Avena">
                     <h3>Galletas de Avena</h3>
                     <p>Saludables y deliciosas, perfectas para cualquier momento.</p>
-                    <span class="precio">$0.75</span>
-                    <button class="button">Añadir al Carrito</button>
+                    <span class="precio">$3.000</span>
                 </div>
                 <div class="producto">
                     <img src="imagenes/pastel de avena.jpeg" alt="Pastel de Avena">
                     <h3>Pastel de Avena</h3>
                     <p>Una opción nutritiva y deliciosa para disfrutar.</p>
-                    <span class="precio">$12.75</span>
-                    <button class="button">Añadir al Carrito</button>
+                    <span class="precio">$6.000</span>
                 </div>
             </div>
             <a href="/PanaderiaSC/menu.html" id="cargar-menu-completo" class="button ver-mas">Ver Menú Completo</a>
@@ -103,22 +97,30 @@
             </div>
         </section>
 
-        <section id="contenedor-nosotros" class="nosotros-cargado" style="display: none;">
-        </section>
-
         <section class="ubicacion">
             <h2>Visítanos en Nuestro Horno en Cali</h2>
             <div class="mapa">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.821999089349!2d-76.5199947854895!3d3.405348997513889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a68c8d241f1f%3A0x9b8a7c1c8b7a8d3a!2s[Tu%20Direcci%C3%B3n%20de%20Panader%C3%ADa]!5e0!3m2!1ses-419!2sco!4v1713173905789!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <p>Estamos ubicados en: [Tu Dirección en Cali]</p>
-            <p>Horario: Lunes a Sábado de 6:00 am a 8:00 pm</p>
-            <p>(Domingos y Festivos no atendemos)</p>
+            <p>Horario: Lunes a Domingo de 6:00 am a 10:00 pm</p>
         </section>
 
         <section id="contenedor-menu" class="menu-cargado" style="display: none;">
             </section>
     </main>
+
+    <section id="contenedor-nosotros" class="nosotros-cargado" style="display: none;">
+    </section>
+
+    <section id="pedidos" class="pedidos-section">
+        <h2>Realiza tu Pedido</h2>
+        <p>¡Es fácil ordenar tus productos favoritos de Sabor Caleño! Elige la opción que mejor se adapte a ti:</p>
+        <div class="pedidos-opciones">
+            <a href="https://wa.me/573114798932" target="_blank" class="button">Pedir por WhatsApp</a>
+            <a href="https://www.facebook.com/share/16WmorrAAK/" target="_blank" class="button">Visitar nuestra Tienda en Línea</a>
+            </div>
+    </section>
 
     <footer>
         <p>© [2025] Sabor Caleño. Todos los derechos reservados.</p>
@@ -147,7 +149,6 @@
                     .then(data => {
                         contenedorMenu.innerHTML = data;
                         contenedorMenu.style.display = 'block';
-                        // Opcional: Puedes añadir aquí código para ocultar otras secciones si lo deseas
                         contenedorMenu.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
                     })
                     .catch(error => {
@@ -170,14 +171,14 @@
             cargarNosotrosBtn.addEventListener('click', function(event) {
                 event.preventDefault();
     
-                fetch('/PanaderiaSC/nosotros-contenido.html') // Ruta a tu archivo nosotros-contenido.html
+                fetch('/PanaderiaSC/nosotros-contenido.html') 
                     .then(response => response.text())
                     .then(data => {
                         contenedorNosotros.innerHTML = data;
                         contenedorNosotros.style.display = 'block';
                         contenedorNosotros.scrollIntoView({ behavior: 'smooth' });
     
-                        // Añadir funcionalidad para el botón "Ocultar Información" dentro del contenido cargado
+
                         const ocultarNosotrosBtn = document.getElementById('ocultar-nosotros');
                         if (ocultarNosotrosBtn) {
                             ocultarNosotrosBtn.addEventListener('click', function() {
