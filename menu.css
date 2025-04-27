@@ -18,7 +18,7 @@
 }
 
 /* Media query para pantallas más grandes (4 por fila en el menú) */
-@media (min-width: 768px) { /* Ajusta el ancho si es necesario */
+@media (min-width: 768px) { 
     .menu-grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -46,5 +46,3 @@
     font-weight: bold;
     color: #e44d26;
 }
-
-/* Puedes agregar más estilos específicos para la página del menú aquí */
