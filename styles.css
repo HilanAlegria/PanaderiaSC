@@ -223,6 +223,21 @@ nav a:hover {
     width: auto;
 }
 
+.pedido-dinamico {
+    animation: pulso 1.5s infinite alternate;
+}
+
+@keyframes pulso {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
 /* Estilos de Ubicación */
 .ubicacion {
     padding: 2em;
