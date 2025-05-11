@@ -1,3 +1,4 @@
+
 # Documentación del Proyecto: Sitio Web Panadería Sabor Caleño
 
 **Última Actualización:** 29 de abril de 2025
@@ -93,7 +94,18 @@ El archivo `styles.css` contiene todos los estilos para la presentación visual 
 
 El sitio web está desplegado utilizando GitHub Pages. Para actualizar el sitio, simplemente se deben subir los archivos actualizados al repositorio de GitHub. GitHub Pages se encarga de servir los archivos estáticos.
 
+## 8. Posibles Mejoras y Futuras Funcionalidades
+
+* Implementar un formulario de contacto funcional para consultas generales.
+* Integrar un sistema de pedidos más avanzado (posiblemente con un carrito de compras y conexión a una base de datos).
+* Mejorar la presentación visual y la experiencia del usuario en diferentes dispositivos.
+* Optimizar las imágenes para mejorar el rendimiento del sitio web.
+* Considerar la implementación de una base de datos para gestionar el menú y los pedidos de forma más dinámica (requeriría un backend).
 
 ## 9. Contacto
 
-Hilan Eduardo Alegria Yate
+[Tu Nombre o Correo Electrónico]
+
+---
+
+Esta documentación proporciona una visión general del proyecto web "Panadería Sabor Caleño" tal como lo hemos desarrollado a lo largo de nuestra conversación. ¡Espero que te sea útil! A medida que sigas desarrollando y añadiendo funcionalidades, recuerda actualizar esta documentación para mantenerla al día.

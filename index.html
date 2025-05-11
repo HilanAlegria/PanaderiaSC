@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería "Sabor Caleño" en Cali</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        /* Estilos para el contenedor del menú cargado */
+        #contenedor-menu {
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            margin-top: 2em;
+            border-top: 3px solid #d4a373;
+        }
+    
+        #contenedor-menu h2 {
+            color: #d4a373;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+    
+        /* ... otros estilos del menú que ya tienes ... */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/Logo Sabor Caleño.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+            <a href="/PanaderiaSC">PANADERIA SABOR CALEÑO</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/PanaderiaSC">Inicio</a></li>
+                <li><a href="/PanaderiaSC/menu.html" id="cargar-menu">Menú</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>El Sabor Auténtico de Cali, Directo a tu Mesa</h1>
+                <p>Disfruta de nuestros panes artesanales, pasteles deliciosos y la tradición horneada con amor.</p>
+                <a href="/PanaderiaSC/menu.html" id="cargar-menu-hero" class="button destacado">Ver Nuestro Menú</a>
+            </div>
+            <div class="Variedad">
+                <img src="imagenes/Variedad_SC_650x800.png" alt="Variedad de panes y pasteles" style="max-width: 100%; height: auto;">
+            </div>
+        </section>
+
+        <section class="destacados">
+            <h2>Nuestros Favoritos</h2>
+            <div class="productos-grid">
+                <div class="producto">
+                    <img src="imagenes/pan frances.jpeg" alt="Pan Francés">
+                    <h3>Pan Francés</h3>
+                    <p>Crujiente por fuera, suave por dentro. Un clásico irresistible.</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/torta de chocolate.jpeg" alt="Torta de Chocolate">
+                    <h3>Torta de Chocolate</h3>
+                    <p>Un deleite cremoso y profundo sabor a chocolate.</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/galletas de avena.jpeg" alt="Galletas de Avena">
+                    <h3>Galletas de Avena</h3>
+                    <p>Saludables y deliciosas, perfectas para cualquier momento.</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/pastel de avena.jpeg" alt="Pastel de Avena">
+                    <h3>Pastel de Avena</h3>
+                    <p>Una opción nutritiva y deliciosa para disfrutar.</p>
+                </div>
+            </div>
+            <a href="/PanaderiaSC/menu.html" id="cargar-menu-completo" class="button ver-mas">Ver Menú Completo</a>
+        </section>
+
+        <section class="sobre-nosotros-principal">
+            <div class="sobre-nosotros-content">
+                <h2>Un Poco de Nuestra Historia</h2>
+                <p>En Sabor Caleño, horneamos tradición desde [Año de Fundación]. Nuestra pasión por el pan artesanal y los sabores auténticos de Cali nos impulsa cada día.</p>
+                <p>Valoramos la calidad, la frescura y el cariño en cada uno de nuestros productos. Somos parte de tu comunidad, endulzando tus momentos especiales con el sabor inigualable de nuestra panadería.</p>
+                <a href="/PanaderiaSC/nosotros.html" id="cargar-nosotros" class="button">Conoce Más Sobre Nosotros</a>
+            </div>
+            <div class="sobre-nosotros-image">
+                <img src="imagenes/Panadera trabajando.jpeg" alt="Panaderos trabajando" style="max-width: 100%; height: auto; border-radius: 8px;">
+            </div>
+        </section>
+
+        <section class="ubicacion">
+            <h2>Visítanos en Nuestro Horno en Cali</h2>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.821999089349!2d-76.5199947854895!3d3.405348997513889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a68c8d241f1f%3A0x9b8a7c1c8b7a8d3a!2s[Tu%20Direcci%C3%B3n%20de%20Panader%C3%ADa]!5e0!3m2!1ses-419!2sco!4v1713173905789!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <p>Estamos ubicados en: [Tu Dirección en Cali]</p>
+            <p>Horario: Lunes a Domingo de 6:00 am a 10:00 pm</p>
+        </section>
+
+        <section id="contenedor-menu" class="menu-cargado" style="display: none;">
+            </section>
+    </main>
+
+    <section id="contenedor-nosotros" class="nosotros-cargado" style="display: none;">
+    </section>
+
+    <section id="pedidos" class="pedidos-section">
+        <h2>Realiza tu Pedido</h2>
+        <p>¡Es fácil ordenar tus productos favoritos de Sabor Caleño! Elige la opción que mejor se adapte a ti:</p>
+        <div class="pedidos-opciones">
+            <a href="https://wa.me/573114798932" target="_blank" class="button">Pedir por WhatsApp</a>
+            <a href="https://www.facebook.com/share/16WmorrAAK/" target="_blank" class="button">Visitar nuestra Tienda en Línea</a>
+            </div>
+    </section>
+
+    <footer>
+        <p>© [2025] Sabor Caleño. Todos los derechos reservados.</p>
+        <div class="social">
+            <a href="https://www.facebook.com/share/16WmorrAAK/" target="_blank" aria-label="Enlace a nuestra página de Facebook">
+                <img src="imagenes/icono fb.png" alt="Facebook" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+            </a>
+            <a href="https://www.instagram.com/h011723?igsh=MWVlZzBmbWFkODIzaQ==" target="_blank" aria-label="Enlace a nuestra cuenta de Instagram">
+                <img src="imagenes/icono ig.jpeg" alt="Instagram" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cargarMenuBtnNav = document.getElementById('cargar-menu');
+            const cargarMenuBtnHero = document.getElementById('cargar-menu-hero');
+            const cargarMenuBtnCompleto = document.getElementById('cargar-menu-completo');
+            const contenedorMenu = document.getElementById('contenedor-menu');
+    
+            function cargarMenu() {
+                event.preventDefault(); // Evita que el enlace navegue
+    
+                fetch('/PanaderiaSC/menu.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        contenedorMenu.innerHTML = data;
+                        contenedorMenu.style.display = 'block';
+                        contenedorMenu.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el menú:', error);
+                        contenedorMenu.innerHTML = '<p>Error al cargar el menú.</p>';
+                        contenedorMenu.style.display = 'block';
+                    });
+            }
+    
+            cargarMenuBtnNav.addEventListener('click', cargarMenu);
+            cargarMenuBtnHero.addEventListener('click', cargarMenu);
+            cargarMenuBtnCompleto.addEventListener('click', cargarMenu);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cargarNosotrosBtn = document.getElementById('cargar-nosotros');
+            const contenedorNosotros = document.getElementById('contenedor-nosotros');
+    
+            cargarNosotrosBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+    
+                fetch('/PanaderiaSC/nosotros-contenido.html') 
+                    .then(response => response.text())
+                    .then(data => {
+                        contenedorNosotros.innerHTML = data;
+                        contenedorNosotros.style.display = 'block';
+                        contenedorNosotros.scrollIntoView({ behavior: 'smooth' });
+    
+
+                        const ocultarNosotrosBtn = document.getElementById('ocultar-nosotros');
+                        if (ocultarNosotrosBtn) {
+                            ocultarNosotrosBtn.addEventListener('click', function() {
+                                contenedorNosotros.style.display = 'none';
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar la información de "Sobre Nosotros":', error);
+                        contenedorNosotros.innerHTML = '<p>Error al cargar la información.</p>';
+                        contenedorNosotros.style.display = 'block';
+                    });
+            });
+        });
+    </script>
+    <div class="whatsapp-flotante">
+        <span class="pedido-dinamico" style="display: block; text-align: center; margin-bottom: 5px; color: #db9d29; font-weight: bold; font-size: 1.2em;">Realiza tu pedido</span>
+        <a href="https://wa.me/573114798932?text=Hola%20quiero%20hacer%20mi%20pedido%20de%20Sabor%20Cale%C3%B1o" target="_blank">
+            <img src="imagenes/icono whatsapp.jpeg" alt="WhatsApp">
+        </a>
+    </div>
+</body>
+</html>
