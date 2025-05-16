@@ -36,6 +36,125 @@ h1, h2, h3 {
     padding: 1em 2em;
 }
 
+        #login-container {
+            position: fixed; /* Lo hace fijo en la pantalla */
+            bottom: 20px;    /* Margen desde abajo */
+            right: 20px;     /* Margen desde la derecha */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 280px; /* Ancho del recuadro */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            font-family: Arial, sans-serif;
+            display: none; /* Inicialmente oculto, lo mostraremos con un botón */
+        }
+
+        #login-container.visible {
+            display: block; /* Para mostrarlo cuando sea necesario */
+        }
+
+        #login-container h3 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        #login-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        #login-form input[type="text"],
+        #login-form input[type="password"] {
+            width: calc(100% - 22px); /* Ancho del input menos el padding */
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        #login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #f0ad4e; /* Color de tu panadería, un poco más anaranjado */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        #login-form button:hover {
+            background-color: #ec971f; /* Tono más oscuro al pasar el mouse */
+        }
+
+        .login-message {
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .login-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .login-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        #toggleLoginBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 320px; /* Un poco a la izquierda del cuadro de login */
+            background-color: #d4a373; /* Usando el color de tu marca */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1001; /* Asegura que el botón esté sobre el recuadro */
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #toggleLoginBtn:hover {
+            background-color: #b8860b; /* Tono más oscuro al pasar el mouse */
+        }
+
+        /* Estilos adicionales de tu archivo styles.css que ya tienes */
+        /* Estilos para el contenedor del menú cargado */
+        #contenedor-menu {
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            margin-top: 2em;
+            border-top: 3px solid #d4a373;
+        }
+    
+        #contenedor-menu h2 {
+            color: #d4a373;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
 /* Estilos del Header */
 header {
     background-color: #fff;

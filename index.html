@@ -5,27 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panadería "Sabor Caleño" en Cali</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-
-        /* Estilos para el contenedor del menú cargado */
-        #contenedor-menu {
-            padding: 2em;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2em;
-            margin-top: 2em;
-            border-top: 3px solid #d4a373;
-        }
-    
-        #contenedor-menu h2 {
-            color: #d4a373;
-            text-align: center;
-            margin-bottom: 1em;
-        }
-    
-        /* ... otros estilos del menú que ya tienes ... */
-    </style>
 </head>
 <body>
     <header>
@@ -102,7 +81,7 @@
         </section>
 
         <section id="contenedor-menu" class="menu-cargado" style="display: none;">
-            </section>
+        </section>
     </main>
 
     <section id="contenedor-nosotros" class="nosotros-cargado" style="display: none;">
@@ -114,7 +93,7 @@
         <div class="pedidos-opciones">
             <a href="https://wa.me/573114798932" target="_blank" class="button">Pedir por WhatsApp</a>
             <a href="https://www.facebook.com/share/16WmorrAAK/" target="_blank" class="button">Visitar nuestra Tienda en Línea</a>
-            </div>
+        </div>
     </section>
 
     <footer>
@@ -128,6 +107,22 @@
             </a>
         </div>
     </footer>
+
+    <button id="toggleLoginBtn">Iniciar Sesión / Acceso Admin</button>
+
+    <div id="login-container">
+        <h3>Iniciar Sesión</h3>
+        <form id="login-form">
+            <label for="login-username">Usuario:</label>
+            <input type="text" id="login-username" name="username" required><br>
+
+            <label for="login-password">Contraseña:</label>
+            <input type="password" id="login-password" name="password" required><br>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="login-message" class="login-message"></p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -173,7 +168,6 @@
                         contenedorNosotros.style.display = 'block';
                         contenedorNosotros.scrollIntoView({ behavior: 'smooth' });
     
-
                         const ocultarNosotrosBtn = document.getElementById('ocultar-nosotros');
                         if (ocultarNosotrosBtn) {
                             ocultarNosotrosBtn.addEventListener('click', function() {
@@ -189,6 +183,9 @@
             });
         });
     </script>
+    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+
     <div class="whatsapp-flotante">
         <span class="pedido-dinamico" style="display: block; text-align: center; margin-bottom: 5px; color: #db9d29; font-weight: bold; font-size: 1.2em;">Realiza tu pedido</span>
         <a href="https://wa.me/573114798932?text=Hola%20quiero%20hacer%20mi%20pedido%20de%20Sabor%20Cale%C3%B1o" target="_blank">
