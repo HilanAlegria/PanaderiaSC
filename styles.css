@@ -36,125 +36,6 @@ h1, h2, h3 {
     padding: 1em 2em;
 }
 
-        #login-container {
-            position: fixed; /* Lo hace fijo en la pantalla */
-            bottom: 20px;    /* Margen desde abajo */
-            right: 20px;     /* Margen desde la derecha */
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            width: 280px; /* Ancho del recuadro */
-            z-index: 1000; /* Asegura que esté por encima de otros elementos */
-            font-family: Arial, sans-serif;
-            display: none; /* Inicialmente oculto, lo mostraremos con un botón */
-        }
-
-        #login-container.visible {
-            display: block; /* Para mostrarlo cuando sea necesario */
-        }
-
-        #login-container h3 {
-            margin-top: 0;
-            color: #333;
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-
-        #login-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        #login-form input[type="text"],
-        #login-form input[type="password"] {
-            width: calc(100% - 22px); /* Ancho del input menos el padding */
-            padding: 8px 10px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        #login-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #f0ad4e; /* Color de tu panadería, un poco más anaranjado */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        #login-form button:hover {
-            background-color: #ec971f; /* Tono más oscuro al pasar el mouse */
-        }
-
-        .login-message {
-            text-align: center;
-            margin-top: 10px;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .login-message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .login-message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        #toggleLoginBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 320px; /* Un poco a la izquierda del cuadro de login */
-            background-color: #d4a373; /* Usando el color de tu marca */
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1001; /* Asegura que el botón esté sobre el recuadro */
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
-
-        #toggleLoginBtn:hover {
-            background-color: #b8860b; /* Tono más oscuro al pasar el mouse */
-        }
-
-        /* Estilos adicionales de tu archivo styles.css que ya tienes */
-        /* Estilos para el contenedor del menú cargado */
-        #contenedor-menu {
-            padding: 2em;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2em;
-            margin-top: 2em;
-            border-top: 3px solid #d4a373;
-        }
-    
-        #contenedor-menu h2 {
-            color: #d4a373;
-            text-align: center;
-            margin-bottom: 1em;
-        }
-
 /* Estilos del Header */
 header {
     background-color: #fff;
@@ -228,7 +109,7 @@ nav a:hover {
 }
 
 .hero-image img {
-    max-width: 100%; /* Esto hace que la imagen no sea más ancha que su contenedor */
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -288,74 +169,182 @@ nav a:hover {
     padding: 1em 2.5em;
 }
 
-/* Estilos de Sobre Nosotros Principal */
-.sobre-nosotros-principal {
-    background-color: #fff;
-    padding: 3em 2em;
-    display: flex;
-    gap: 2em;
-    align-items: center;
-    border-radius: 8px;
-    margin-bottom: 3em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.sobre-nosotros-content {
-    flex: 1;
-    text-align: left;
-}
-
-.sobre-nosotros-content h2 {
-    font-size: 2.5em;
-    margin-bottom: 0.7em;
-}
-
-.sobre-nosotros-content p {
-    font-size: 1.1em;
-    color: #777;
-    margin-bottom: 1.5em;
-}
-
-.sobre-nosotros-image {
-    flex: 1;
-    text-align: center;
-}
-
-.sobre-nosotros-image img {
-    max-width: 100%;
-    height: auto;
+/* NUEVOS ESTILOS PARA EL CONTENEDOR DE LA SECCIÓN "SOBRE NOSOTROS" CARGADA */
+#contenedor-nosotros-cargado {
+    padding: 2em;
+    background-color: #f7e0c7; /* Color de fondo cálido para la sección */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    margin-top: 2em;
+    border-top: 3px solid #d4a373; /* Un borde superior distintivo */
+    display: none; /* Oculto por defecto */
+    position: relative; /* Necesario para posicionar el botón de cerrar */
 }
 
-/* Estilo icono WhatsApp*/
+#contenedor-nosotros-cargado h2 {
+    color: #d4a373;
+    text-align: center;
+    margin-bottom: 1em;
+}
 
-.whatsapp-flotante {
+#contenedor-nosotros-cargado .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+#contenedor-nosotros-cargado .close-button:hover {
+    color: #333;
+}
+
+/* ESTILOS DEL BOTÓN FLOTANTE DEL CARRITO */
+.cart-float-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    background-color: #d4a373; /* Color de tu marca */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50%; /* Para hacerlo circular */
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1050; /* Mayor que el login para que aparezca encima */
+    width: 70px; /* Tamaño del círculo */
+    height: 70px; /* Tamaño del círculo */
+    text-decoration: none; /* Elimina el subrayado si es un 'a' */
 }
 
-.whatsapp-flotante a img {
-    height: 50px; /* Ajusta el tamaño del icono flotante */
-    width: auto;
+.cart-float-button:hover {
+    background-color: #b8860b; /* Tono más oscuro al pasar el mouse */
+    transform: scale(1.05);
 }
 
-.pedido-dinamico {
-    animation: pulso 1.5s infinite alternate;
+.cart-float-button .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
 }
 
-@keyframes pulso {
-    0% {
-        opacity: 0.8;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
+/* ESTILOS DEL FORMULARIO DE LOGIN (Para moverlos a styles.css) */
+#login-container {
+    position: fixed;
+    bottom: 90px; /* Ajustado para estar encima del botón de carrito */
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 280px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    display: none;
 }
+
+#login-container.visible {
+    display: block;
+}
+
+#login-container h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+    background-color: #ec971f;
+}
+
+.login-message {
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.login-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.login-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#toggleLoginBtn {
+    position: fixed;
+    bottom: 100px; /* Ajustado para estar encima del login si se superponen */
+    right: 20px;
+    background-color: #d4a373; /* Usando el color de tu marca */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#toggleLoginBtn:hover {
+    background-color: #b8860b;
+}
+
 
 /* Estilos de Ubicación */
 .ubicacion {
@@ -401,7 +390,7 @@ footer {
 
 .btn-eliminar {
     margin-left: 1em;
-    background-color: #e44d26;
+    background-color: #dc3545; /* Color de Bootstrap danger */
     color: white;
     border: none;
     padding: 0.3em 0.6em;
@@ -409,30 +398,13 @@ footer {
     cursor: pointer;
 }
 
-#total-pedido {
+#total-pedido { /* Este ID ya no se usa directamente en el HTML de index, pero se mantiene por si lo usas en el modal */
     margin-top: 1em;
     font-size: 1.2em;
     font-weight: bold;
     color: #444;
 }
 
-.btn-finalizar {
-    margin-top: 1em;
-    padding: 0.7em 1.5em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-finalizar:hover {
-    background-color: #45a049;
-}
-
-/* Media Queries para Responsividad (Pantallas Pequeñas - Celulares) */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -476,7 +448,7 @@ footer {
     }
 
     .productos-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        grid-template-columns: 1fr;
     }
 
     .sobre-nosotros-principal {
@@ -505,33 +477,193 @@ footer {
 
     .ubicacion .mapa {
         width: 100%;
-        height: 300px; /* Ajusta la altura del mapa en móviles */
+        height: 300px;
+    }
+
+    /* Ajustes para los botones flotantes en móviles */
+    #toggleLoginBtn {
+        bottom: 90px;
+        right: 10px;
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    .cart-float-button {
+        bottom: 20px;
+        right: 10px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.3em;
+    }
+
+    .cart-float-button .badge {
+        font-size: 0.6em;
+        padding: 4px 8px;
     }
 }
 
-.pedidos-section {
-    padding: 2em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2em;
-    text-align: center;
+/* Estilos del modal del carrito */
+#cartModal .modal-body .table {
+    margin-bottom: 1rem;
 }
 
-.pedidos-section h2 {
-    color: #e44d26;
-    margin-bottom: 1em;
+#cartModal .modal-body .text-end {
+    margin-bottom: 1rem;
 }
 
-.pedidos-section p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1.5em;
-}
+        #login-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 280px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            display: none;
+        }
 
-.pedidos-opciones {
-    display: flex;
-    gap: 1em;
-    justify-content: center;
-    margin-top: 1.5em;
-}
+        #login-container.visible {
+            display: block;
+        }
+
+        #login-container h3 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        #login-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        #login-form input[type="text"],
+        #login-form input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        #login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        #login-form button:hover {
+            background-color: #ec971f;
+        }
+
+        .login-message {
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .login-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .login-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        #toggleLoginBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 320px;
+            background-color: #d4a373;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #toggleLoginBtn:hover {
+            background-color: #b8860b;
+        }
+
+        /* Estilos del carrito flotante */
+        .cart-float-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #d4a373; /* Color de tu marca */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%; /* Para hacerlo circular */
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            z-index: 1050; /* Mayor que el login para que aparezca encima */
+            width: 70px; /* Tamaño del círculo */
+            height: 70px; /* Tamaño del círculo */
+            text-decoration: none; /* Elimina el subrayado si es un 'a' */
+        }
+
+        .cart-float-button:hover {
+            background-color: #b8860b; /* Tono más oscuro al pasar el mouse */
+            transform: scale(1.05);
+        }
+
+        .cart-float-button .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+
+        /* Estilos para el contenedor del menú cargado */
+        #contenedor-menu {
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            margin-top: 2em;
+            border-top: 3px solid #d4a373;
+        }
+    
+        #contenedor-menu h2 {
+            color: #d4a373;
+            text-align: center;
+            margin-bottom: 1em;
+        }
