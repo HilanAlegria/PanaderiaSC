@@ -500,6 +500,101 @@ footer {
         font-size: 0.6em;
         padding: 4px 8px;
     }
+
+    /* ESTILOS ESPECÍFICOS PARA EL MODAL DEL CARRITO EN MÓVILES */
+    #cartModal .modal-dialog {
+        margin: 0.5rem; /* Reduce el margen para que el modal ocupe más espacio */
+        width: calc(100% - 1rem); /* Ocupa casi todo el ancho de la pantalla */
+        max-width: none; /* Elimina cualquier max-width fijo */
+    }
+
+    #cartModal .modal-content {
+        height: auto; /* Ajusta la altura automáticamente */
+        max-height: 90vh; /* Limita la altura para que no desborde la pantalla */
+        overflow-y: auto; /* Permite desplazamiento vertical si el contenido es largo */
+    }
+
+    #cartModal .modal-body {
+        padding: 1rem; /* Reduce el padding interno del body del modal */
+    }
+
+    #cartModal .table {
+        font-size: 0.85em; /* Reduce el tamaño de fuente de la tabla */
+        margin-bottom: 0.5rem; /* Espacio debajo de la tabla */
+    }
+
+    #cartModal .table th,
+    #cartModal .table td {
+        padding: 0.5rem 0.3rem; /* Reduce el padding de las celdas */
+        vertical-align: middle; /* Alinea verticalmente el contenido */
+    }
+
+    /* Hacer la tabla adaptable */
+    #cartModal .table-responsive {
+        overflow-x: auto; /* Permite desplazamiento horizontal */
+        -webkit-overflow-scrolling: touch; /* Mejora el scroll en iOS */
+    }
+
+    /* Ajustes para las columnas de la tabla */
+    #cartModal .table th:nth-child(1), /* Nombre */
+    #cartModal .table td:nth-child(1) {
+        width: 35%; /* Más espacio para el nombre del producto */
+        word-wrap: break-word; /* Rompe palabras largas */
+    }
+    #cartModal .table th:nth-child(2), /* Precio */
+    #cartModal .table td:nth-child(2) {
+        width: 15%; /* Menos espacio para el precio */
+    }
+    #cartModal .table th:nth-child(3), /* Cantidad */
+    #cartModal .table td:nth-child(3) {
+        width: 25%; /* Ajusta el ancho para la cantidad */
+    }
+    #cartModal .table th:nth-child(4), /* Total por ítem */
+    #cartModal .table td:nth-child(4) {
+        width: 15%; /* Menos espacio para el total del ítem */
+    }
+    #cartModal .table th:nth-child(5), /* Eliminar */
+    #cartModal .table td:nth-child(5) {
+        width: 10%; /* Menos espacio para el botón de eliminar */
+    }
+
+    /* Ajustes para los controles de cantidad */
+    #cartModal .input-group {
+        width: 80px !important; /* Haz que el input group sea más pequeño */
+        display: flex; /* Asegura que los elementos se comporten como flex */
+    }
+
+    #cartModal .input-group .btn-sm {
+        padding: 0.1rem 0.3rem; /* Reduce el padding de los botones +/- */
+        font-size: 0.7em; /* Reduce el tamaño de fuente de los botones */
+    }
+
+    #cartModal .form-control-sm {
+        padding: 0.1rem 0.2rem; /* Reduce el padding del input de cantidad */
+        font-size: 0.8em; /* Reduce el tamaño de fuente del input */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    /* Botón de eliminar */
+    #cartModal .btn-danger {
+        padding: 0.2rem 0.4rem; /* Reduce el padding del botón eliminar */
+        font-size: 0.75em; /* Reduce el tamaño de fuente del botón */
+    }
+
+    /* Información de total y botones al final del modal */
+    #cartModal .text-end {
+        text-align: center !important; /* Centra el total y botones al final */
+        margin-top: 1rem;
+    }
+    #cartModal .modal-footer {
+        flex-direction: column; /* Apila los botones del footer */
+        align-items: stretch; /* Estira los botones a lo ancho */
+        padding: 1rem;
+    }
+    #cartModal .modal-footer .btn {
+        margin-top: 0.5rem; /* Espacio entre los botones apilados */
+        width: 100%; /* Asegura que los botones ocupen todo el ancho disponible */
+    }
 }
 
 /* Estilos del modal del carrito */
@@ -511,159 +606,120 @@ footer {
     margin-bottom: 1rem;
 }
 
-        #login-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            width: 280px;
-            z-index: 1000;
-            font-family: Arial, sans-serif;
-            display: none;
-        }
+#login-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 280px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    display: none;
+}
 
-        #login-container.visible {
-            display: block;
-        }
+#login-container.visible {
+    display: block;
+}
 
-        #login-container h3 {
-            margin-top: 0;
-            color: #333;
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
+#login-container h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
 
-        #login-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
+#login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
 
-        #login-form input[type="text"],
-        #login-form input[type="password"] {
-            width: calc(100% - 22px);
-            padding: 8px 10px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
 
-        #login-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #f0ad4e;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-        #login-form button:hover {
-            background-color: #ec971f;
-        }
+#login-form button:hover {
+    background-color: #ec971f;
+}
 
-        .login-message {
-            text-align: center;
-            margin-top: 10px;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
+.login-message {
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
 
-        .login-message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
+.login-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
 
-        .login-message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
+.login-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
 
-        #toggleLoginBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 320px;
-            background-color: #d4a373;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1001;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
+#toggleLoginBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 320px;
+    background-color: #d4a373;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
 
-        #toggleLoginBtn:hover {
-            background-color: #b8860b;
-        }
+#toggleLoginBtn:hover {
+    background-color: #b8860b;
+}
 
-        /* Estilos del carrito flotante */
-        .cart-float-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #d4a373; /* Color de tu marca */
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50%; /* Para hacerlo circular */
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            z-index: 1050; /* Mayor que el login para que aparezca encima */
-            width: 70px; /* Tamaño del círculo */
-            height: 70px; /* Tamaño del círculo */
-            text-decoration: none; /* Elimina el subrayado si es un 'a' */
-        }
+/* Estilos para el contenedor del menú cargado */
+#contenedor-menu {
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    margin-top: 2em;
+    border-top: 3px solid #d4a373;
+}
 
-        .cart-float-button:hover {
-            background-color: #b8860b; /* Tono más oscuro al pasar el mouse */
-            transform: scale(1.05);
-        }
-
-        .cart-float-button .badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            padding: 5px 10px;
-            border-radius: 50%;
-            background-color: red;
-            color: white;
-            font-size: 0.7em;
-            font-weight: bold;
-        }
-
-        /* Estilos para el contenedor del menú cargado */
-        #contenedor-menu {
-            padding: 2em;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2em;
-            margin-top: 2em;
-            border-top: 3px solid #d4a373;
-        }
-    
-        #contenedor-menu h2 {
-            color: #d4a373;
-            text-align: center;
-            margin-bottom: 1em;
-        }
+#contenedor-menu h2 {
+    color: #d4a373;
+    text-align: center;
+    margin-bottom: 1em;
+}
