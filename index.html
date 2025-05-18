@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -37,29 +38,37 @@
         <section class="destacados">
             <h2>Nuestros Favoritos</h2>
             <div class="productos-grid">
-                <div class="producto">
+                <div class="producto menu-item" data-id="pan-frances" data-name="Pan Francés" data-price="2500">
                     <img src="imagenes/pan frances.jpeg" alt="Pan Francés">
                     <h3>Pan Francés</h3>
                     <p>Crujiente por fuera, suave por dentro. Un clásico irresistible.</p>
                     <p class="precio">$2.500</p>
+                    <button class="button agregar-carrito" 
+                            onclick="window.addProductToCart('pan-frances', 'Pan Francés', 2500)">Agregar al Carrito</button>
                 </div>
-                <div class="producto">
+                <div class="producto menu-item" data-id="torta-chocolate" data-name="Torta de Chocolate" data-price="25000">
                     <img src="imagenes/torta de chocolate.jpeg" alt="Torta de Chocolate">
                     <h3>Torta de Chocolate</h3>
                     <p>Un deleite cremoso y profundo sabor a chocolate.</p>
                     <p class="precio">$25.000</p>
+                    <button class="button agregar-carrito"
+                            onclick="window.addProductToCart('torta-chocolate', 'Torta de Chocolate', 25000)">Agregar al Carrito</button>
                 </div>
-                <div class="producto">
+                <div class="producto menu-item" data-id="galletas-avena" data-name="Galletas de Avena" data-price="3000">
                     <img src="imagenes/galletas de avena.jpeg" alt="Galletas de Avena">
                     <h3>Galletas de Avena</h3>
                     <p>Saludables y deliciosas, perfectas para cualquier momento.</p>
                     <p class="precio">$3.000</p>
+                    <button class="button agregar-carrito"
+                            onclick="window.addProductToCart('galletas-avena', 'Galletas de Avena', 3000)">Agregar al Carrito</button>
                 </div>
-                <div class="producto">
+                <div class="producto menu-item" data-id="pastel-avena" data-name="Pastel de Avena" data-price="18000">
                     <img src="imagenes/pastel de avena.jpeg" alt="Pastel de Avena">
                     <h3>Pastel de Avena</h3>
                     <p>Una opción nutritiva y deliciosa para disfrutar.</p>
                     <p class="precio">$18.000</p>
+                    <button class="button agregar-carrito"
+                            onclick="window.addProductToCart('pastel-avena', 'Pastel de Avena', 18000)">Agregar al Carrito</button>
                 </div>
             </div>
             <a href="/PanaderiaSC/menu.html" id="cargar-menu-completo" class="button ver-mas">Ver Menú Completo</a>
@@ -70,7 +79,7 @@
                 <h2>Un Poco de Nuestra Historia</h2>
                 <p>En Sabor Caleño, horneamos tradición desde [Año de Fundación]. Nuestra pasión por el pan artesanal y los sabores auténticos de Cali nos impulsa cada día.</p>
                 <p>Valoramos la calidad, la frescura y el cariño en cada uno de nuestros productos. Somos parte de tu comunidad, endulzando tus momentos especiales con el sabor inigualable de nuestra panadería.</p>
-                </div>
+            </div>
             <div class="sobre-nosotros-image">
                 <img src="imagenes/Panadera trabajando.jpeg" alt="Panaderos trabajando" style="max-width: 100%; height: auto; border-radius: 8px;">
             </div>
@@ -107,8 +116,7 @@
                                 </tr>
                             </thead>
                             <tbody id="cart-list">
-                                <tr><td colspan="5" class="text-center">Cargando...</td></tr>
-                            </tbody>
+                                </tbody>
                         </table>
                         <h4 class="text-end">Total: $<span id="cart-total">0</span></h4>
                         <div class="mb-3">
@@ -203,194 +211,7 @@
         🛒<span class="badge" id="cart-count">0</span>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cargarMenuBtnNav = document.getElementById('cargar-menu');
-            const cargarMenuBtnHero = document.getElementById('cargar-menu-hero');
-            const cargarMenuBtnCompleto = document.getElementById('cargar-menu-completo');
-            const contenedorMenu = document.getElementById('contenedor-menu');
-    
-            function cargarMenu(event) {
-                event.preventDefault(); // Evita que el enlace navegue
-    
-                fetch('/PanaderiaSC/menu.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        contenedorMenu.innerHTML = data;
-                        contenedorMenu.style.display = 'block';
-                        contenedorMenu.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
-                        // Después de cargar el menú, inicializa los event listeners para sus botones
-                        initializeMenuButtons();
-                    })
-                    .catch(error => {
-                        console.error('Error al cargar el menú:', error);
-                        contenedorMenu.innerHTML = '<p>Error al cargar el menú.</p>';
-                        contenedorMenu.style.display = 'block';
-                    });
-            }
-    
-            cargarMenuBtnNav.addEventListener('click', cargarMenu);
-            cargarMenuBtnHero.addEventListener('click', cargarMenu);
-            cargarMenuBtnCompleto.addEventListener('click', cargarMenu);
-
-            // Función para inicializar los botones de "Agregar al Carrito" en el menú cargado
-            // Se asume que esta función se define en otro script como 'script.js'
-            // Si no, necesitarías definirla aquí o asegurarte de que esté disponible globalmente.
-            function initializeMenuButtons() {
-                const botonesAgregarCarritoMenu = document.querySelectorAll('#contenedor-menu .agregar-carrito');
-                botonesAgregarCarritoMenu.forEach(boton => {
-                    boton.removeEventListener('click', addProductToCart); // Evitar duplicados
-                    boton.addEventListener('click', addProductToCart);
-                });
-            }
-
-            // Función para añadir producto al carrito (usada por script.js)
-            // Se define aquí para que pueda ser llamada desde initializeMenuButtons
-            let cart = JSON.parse(localStorage.getItem('cart')) || []; // Asegúrate de que 'cart' esté inicializado
-            
-            function addProductToCart() {
-                const productDiv = this.closest('.menu-item');
-                const productId = productDiv.dataset.id;
-                const productName = productDiv.dataset.name;
-                const productPrice = parseFloat(productDiv.dataset.price);
-
-                const existingItem = cart.find(item => item.id === productId);
-
-                if (existingItem) {
-                    existingItem.quantity++;
-                } else {
-                    cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
-                }
-
-                saveCart();
-                renderCart();
-            }
-
-            // Estas funciones (saveCart y renderCart) se asumen que están definidas en 'script.js'
-            // o donde manejes la lógica del carrito.
-            function saveCart() {
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-
-            function renderCart() {
-                // Lógica para renderizar el carrito en el modal
-                const cartList = document.getElementById('cart-list');
-                const cartTotal = document.getElementById('cart-total');
-                const cartCount = document.getElementById('cart-count');
-
-                cartList.innerHTML = '';
-                let total = 0;
-                let count = 0;
-
-                if (cart.length === 0) {
-                    cartList.innerHTML = '<tr><td colspan="5" class="text-center">El carrito está vacío.</td></tr>';
-                } else {
-                    cart.forEach(item => {
-                        const row = document.createElement('tr');
-                        const itemTotalPrice = item.price * item.quantity;
-                        row.innerHTML = `
-                            <td>${item.name}</td>
-                            <td>$${item.price.toLocaleString('es-CO')}</td>
-                            <td>
-                                <input type="number" class="form-control form-control-sm" value="${item.quantity}" min="1" 
-                                    onchange="updateCartQuantity('${item.id}', this.value)">
-                            </td>
-                            <td>$${itemTotalPrice.toLocaleString('es-CO')}</td>
-                            <td>
-                                <button class="btn btn-danger btn-sm" onclick="removeFromCart('${item.id}')">Eliminar</button>
-                            </td>
-                        `;
-                        cartList.appendChild(row);
-                        total += itemTotalPrice;
-                        count += item.quantity;
-                    });
-                }
-                cartTotal.textContent = total.toLocaleString('es-CO');
-                cartCount.textContent = count;
-            }
-
-            // Funciones globales para actualizar y eliminar del carrito (si son necesarias fuera del script.js)
-            window.updateCartQuantity = function(productId, quantity) {
-                const item = cart.find(i => i.id === productId);
-                if (item) {
-                    item.quantity = parseInt(quantity);
-                    if (item.quantity <= 0) {
-                        removeFromCart(productId);
-                    } else {
-                        saveCart();
-                        renderCart();
-                    }
-                }
-            };
-
-            window.removeFromCart = function(productId) {
-                cart = cart.filter(item => item.id !== productId);
-                saveCart();
-                renderCart();
-            };
-
-            window.clearCart = function() {
-                cart = [];
-                saveCart();
-                renderCart();
-            };
-
-            window.showConfirmationModal = function() {
-                const email = document.getElementById('email').value;
-                const name = document.getElementById('name').value;
-                const gender = document.getElementById('gender').value;
-                const phone = document.getElementById('phone').value;
-                const paymentMethod = document.getElementById('payment-method').value;
-
-                if (!email || !name || !phone) {
-                    alert('Por favor, completa todos los campos de información personal.');
-                    return;
-                }
-
-                if (cart.length === 0) {
-                    alert('Tu carrito está vacío. No puedes realizar una compra.');
-                    return;
-                }
-
-                const modalBodySummary = document.getElementById('modal-body-summary');
-                let summaryHtml = '<h5>Resumen de tu Pedido:</h5><ul>';
-                cart.forEach(item => {
-                    summaryHtml += `<li>${item.name} x ${item.quantity} - $${(item.price * item.quantity).toLocaleString('es-CO')}</li>`;
-                });
-                summaryHtml += `</ul><p><strong>Total a Pagar: $${document.getElementById('cart-total').textContent}</strong></p>`;
-                summaryHtml += `<h6>Tus Datos:</h6>
-                                <p><strong>Nombre:</strong> ${name}</p>
-                                <p><strong>Correo:</strong> ${email}</p>
-                                <p><strong>Género:</strong> ${gender}</p>
-                                <p><strong>Teléfono:</strong> ${phone}</p>
-                                <p><strong>Método de Pago:</strong> ${paymentMethod}</p>`;
-                modalBodySummary.innerHTML = summaryHtml;
-
-                const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-                confirmationModal.show();
-            };
-
-            window.checkout = function() {
-                alert('¡Compra realizada con éxito! Nos pondremos en contacto contigo para la entrega.');
-                clearCart();
-                const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
-                if (cartModal) {
-                    cartModal.hide();
-                }
-                const confirmationModal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
-                if (confirmationModal) {
-                    confirmationModal.hide();
-                }
-            };
-            
-            // Renderiza el carrito al cargar la página
-            renderCart();
-        });
-    </script>
-    <script src="script.js"></script>
-
+    <script src="script.js"></script> 
     <script src="js/main.js"></script>
 
 </body>
