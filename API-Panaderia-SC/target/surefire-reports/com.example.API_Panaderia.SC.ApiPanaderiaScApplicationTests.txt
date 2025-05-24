@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.API_Panaderia.SC.ApiPanaderiaScApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.56 s -- in com.example.API_Panaderia.SC.ApiPanaderiaScApplicationTests

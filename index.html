@@ -128,12 +128,8 @@
                             <input type="text" id="name" class="form-control" placeholder="Ingresa tu nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label for="gender" class="form-label">Género:</label>
-                            <select id="gender" class="form-select" required>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                                <option value="No definido">No definido</option>
-                            </select>
+                            <label for="location" class="form-label">Ubicación para envío:</label>
+                            <input type="text" id="location" class="form-control" placeholder="Ej: Calle 10 #5-20, Barrio Granada, Cali" required>
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Teléfono:</label>
@@ -191,7 +187,9 @@
         </div>
     </footer>
 
-    <button id="toggleLoginBtn" style="bottom: 90px; right: 20px;">Iniciar Sesión / Acceso Admin</button>
+        <a href="login.html" target="_blank" class="button" style="position: fixed; bottom: 90px; right: 20px; z-index: 1001;"> 
+            Iniciar Sesión / Registro
+        </a>
 
     <div id="login-container">
         <h3>Iniciar Sesión</h3>

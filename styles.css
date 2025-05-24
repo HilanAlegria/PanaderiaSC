@@ -723,3 +723,88 @@ footer {
     text-align: center;
     margin-bottom: 1em;
 }
+
+/* Estilos para la página de autenticación */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f0e3;
+    padding: 2em;
+}
+
+.auth-forms {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.auth-form {
+    transition: all 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #523d2a;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.auth-toggle {
+    text-align: center;
+    margin-top: 1em;
+    color: #666;
+}
+
+.auth-toggle a {
+    color: #d4a373;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-toggle a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el sistema de contraseña */
+.password-container {
+    position: relative;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    cursor: pointer;
+    color: #666;
+}
+
+.password-toggle:hover {
+    color: #d4a373;
+}
+
+/* Estilos para mensajes de validación */
+.error-message {
+    color: #dc3545;
+    font-size: 0.8em;
+    margin-top: 0.25rem;
+}

@@ -6,7 +6,7 @@ const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 const emailInput = document.getElementById('email');
 const nameInput = document.getElementById('name');
-const genderSelect = document.getElementById('gender');
+const locationInput = document.getElementById('location');
 const phoneInput = document.getElementById('phone');
 const paymentMethodSelect = document.getElementById('payment-method');
 const modalBodySummary = document.getElementById('modal-body-summary');
@@ -94,12 +94,12 @@ window.clearCart = function() {
 window.showConfirmationModal = function() {
     const email = emailInput.value;
     const name = nameInput.value;
-    const gender = genderSelect.value;
+    const location = locationInput.value;
     const phone = phoneInput.value;
     const paymentMethod = paymentMethodSelect.value;
 
-    if (!email || !name || !phone) {
-        alert('Por favor, completa todos los campos de información personal.');
+    if (!email || !name || !phone || !location) {
+        alert('Por favor, completa todos los campos de información personal y de envío.');
         return;
     }
 
@@ -114,11 +114,11 @@ window.showConfirmationModal = function() {
     });
     summaryHtml += `</ul><p><strong>Total a Pagar: $${cartTotal.textContent}</strong></p>`;
     summaryHtml += `<h6>Tus Datos:</h6>
-                            <p><strong>Nombre:</strong> ${name}</p>
-                            <p><strong>Correo:</strong> ${email}</p>
-                            <p><strong>Género:</strong> ${gender}</p>
-                            <p><strong>Teléfono:</strong> ${phone}</p>
-                            <p><strong>Método de Pago:</strong> ${paymentMethod}</p>`;
+                    <p><strong>Nombre:</strong> ${name}</p>
+                    <p><strong>Correo:</strong> ${email}</p>
+                    <p><strong>Ubicación para envío:</strong> ${location}</p>
+                    <p><strong>Teléfono:</strong> ${phone}</p>
+                    <p><strong>Método de Pago:</strong> ${paymentMethod}</p>`;
     modalBodySummary.innerHTML = summaryHtml;
 
     const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
@@ -128,10 +128,10 @@ window.showConfirmationModal = function() {
 window.checkout = function() {
     const email = emailInput.value;
     const name = nameInput.value;
-    const gender = genderSelect.value;
+    const location = locationInput.value;
     const phone = phoneInput.value;
     const paymentMethod = paymentMethodSelect.value;
-    const total = cartTotal.textContent; // Ya está formateado con .toLocaleString()
+    const total = cartTotal.textContent;
 
     // 1. Generar el PDF
     const { jsPDF } = window.jspdf;
@@ -154,7 +154,7 @@ window.checkout = function() {
     y += 7;
     doc.text(`Teléfono: ${phone}`, 10, y);
     y += 7;
-    doc.text(`Género: ${gender}`, 10, y);
+    doc.text(`Ubicación para envío: ${location}`, 10, y);
     y += 10;
 
     // Detalles del Pedido
@@ -195,13 +195,13 @@ window.checkout = function() {
     doc.setFontSize(10);
     doc.text('¡Gracias por tu compra en Panadería Sabor Caleño!', 105, y, null, null, 'center');
     y += 5;
-    doc.text('Pronto nos pondremos en contacto contigo para la entrega.', 105, y, null, null, 'center');
+    doc.text('Pronto nos pondremos en contacto contigo para coordinar la entrega.', 105, y, null, null, 'center');
 
     // Guardar el PDF
     doc.save(`Recibo_SaborCaleño_${name.replace(/\s/g, '_')}_${new Date().getTime()}.pdf`);
 
     // 2. Mostrar la alerta y limpiar el carrito
-    alert('¡Compra realizada con éxito! Nos pondremos en contacto contigo para la entrega.');
+    alert('¡Compra realizada con éxito! Nos pondremos en contacto contigo para coordinar la entrega.');
     clearCart();
 
     // 3. Cerrar los modales
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contenedorMenu.innerHTML = data;
                 contenedorMenu.style.display = 'block';
                 contenedorMenu.scrollIntoView({ behavior: 'smooth' });
-                initializeMenuButtons(); // Inicializa los event listeners para los botones del menú
+                initializeMenuButtons();
             })
             .catch(error => {
                 console.error('Error al cargar el menú:', error);
@@ -247,53 +247,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeMenuButtons() {
         const botonesAgregarCarritoMenu = document.querySelectorAll('#contenedor-menu .agregar-carrito');
         botonesAgregarCarritoMenu.forEach(boton => {
-            // Eliminar listeners previos para evitar duplicados si el menú se carga múltiples veces
             boton.removeEventListener('click', handleAddProductClick); 
             boton.addEventListener('click', handleAddProductClick);
         });
     }
 
-    // Nuevo manejador de evento para los botones "Agregar al Carrito"
+    // Manejador de evento para los botones "Agregar al Carrito"
     function handleAddProductClick() {
         const productDiv = this.closest('.menu-item');
         const productId = productDiv.dataset.id;
         const productName = productDiv.dataset.name;
         const productPrice = parseFloat(productDiv.dataset.price);
         
-        // Llama a la función global para añadir al carrito
         window.addProductToCart(productId, productName, productPrice);
     }
 
-    // Renderiza el carrito al cargar la página (se inicializa una vez)
+    // Renderiza el carrito al cargar la página
     renderCart();
 });
 
-// Lógica de inicio de sesión (si la tienes en este script)
-const toggleLoginBtn = document.getElementById('toggleLoginBtn');
-const loginContainer = document.getElementById('login-container');
-const loginForm = document.getElementById('login-form');
-const loginMessage = document.getElementById('login-message');
-
-if (toggleLoginBtn && loginContainer) {
-    toggleLoginBtn.addEventListener('click', () => {
-        loginContainer.classList.toggle('active');
-    });
-
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const username = loginForm['login-username'].value;
-        const password = loginForm['login-password'].value;
-
-        // Aquí deberías tener tu lógica de autenticación (ej. con datos de prueba o un backend)
-        if (username === 'admin' && password === 'admin123') { // Ejemplo simple
-            loginMessage.textContent = 'Inicio de sesión exitoso. ¡Bienvenido, Admin!';
-            loginMessage.style.color = 'green';
-            setTimeout(() => {
-                loginContainer.classList.remove('active'); // O redirigir
-            }, 1500);
-        } else {
-            loginMessage.textContent = 'Usuario o contraseña incorrectos.';
-            loginMessage.style.color = 'red';
-        }
-    });
-}
+// Eliminada la lógica de inicio de sesión flotante
