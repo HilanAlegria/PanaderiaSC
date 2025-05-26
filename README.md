@@ -1,6 +1,9 @@
 Sitio Web - Panadería Sabor Caleño
+
 Última Actualización: 24 de Mayo de 2025
+
 Autor: Hilan Eduardo Alegria Yate
+
 Despliegue: https://hilanalegria.github.io/PanaderiaSC/
 
 Introducción Este proyecto es una página web desarrollada para la panadería Sabor Caleño, ubicada en Cali, Colombia. El objetivo es ofrecer una plataforma informativa e interactiva para que los clientes puedan conocer el menú, la historia de la panadería y realizar pedidos de manera sencilla.
