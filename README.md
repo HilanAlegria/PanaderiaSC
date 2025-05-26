@@ -59,4 +59,5 @@ Estilo especial para el ícono de WhatsApp flotante.
 Seccion: "iniciar sesion/registro": se implementa una nueva ventana para el registro del usuario en la pagina, las opciones son registrarse como nuevo usuario, asi como ingresar un usuario anteriormente guardado.
 
 falta: agregar opcion de administrador y accesibilidad y adaptabilidad 
+
 Contacto Desarrollador: Hilan Eduardo Alegria Yate, gemini y Diosito
