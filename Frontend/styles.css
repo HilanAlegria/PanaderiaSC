@@ -1,0 +1,654 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f0e3;
+    color: #523d2a;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #d4a373;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.button {
+    display: inline-block;
+    background-color: #d4a373;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #b8860b;
+}
+
+.destacado {
+    font-size: 1.2em;
+    padding: 1em 2em;
+}
+
+/* Estilos del Header */
+header {
+    background-color: #fff;
+    color: #523d2a;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Permite que el header se mantenga arriba al hacer scroll */
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de la mayoría del contenido */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo a {
+    color: #d4a373;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #523d2a;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #f0e6da;
+}
+
+/* Estilos del Hero Section */
+.hero {
+    background: url('imagenes/hero-bakery.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 8em 2em;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido no se salga */
+}
+
+/* Oscurecer la imagen de fondo para mejorar la legibilidad del texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    color: white; /* Asegúrate de que el título sea blanco para contraste */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejor legibilidad */
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    color: #f0e6da; /* Un color ligeramente diferente para el párrafo */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Estilos para productos destacados (similar a menu-item) */
+.productos-destacados {
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 2em auto;
+    max-width: 1200px; /* Igual que el contenedor del menú para consistencia */
+}
+
+.productos-destacados h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5em;
+    font-size: 2.2em;
+}
+
+/* Usa la misma estructura de grid para productos destacados */
+.productos-destacados .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo por defecto */
+    gap: 1.5em;
+}
+
+/* Media query para pantallas más grandes (4 por fila en productos destacados) */
+@media (min-width: 768px) {
+    .productos-destacados .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Estilos para .menu-item, que se aplican tanto a productos destacados como al menú completo */
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Recorta la imagen para que cubra el área sin distorsionarse */
+    border-radius: 5px;
+    margin-bottom: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-item h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: #523d2a;
+    font-size: 1.3em;
+}
+
+.menu-item p {
+    color: #666;
+    margin-bottom: 1em;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.menu-item .precio {
+    font-weight: bold;
+    color: #e44d26;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.menu-item .agregar-carrito {
+    background-color: #d4a373;
+    color: white;
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    width: 90%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.menu-item .agregar-carrito:hover {
+    background-color: #b8860b;
+    transform: translateY(-2px);
+}
+
+/* Estilos para la sección de mapa */
+.mapa-ubicacion {
+    padding: 2em;
+    text-align: center;
+    background-color: #f8f0e3;
+    margin-top: 2em;
+}
+
+.mapa-ubicacion h2 {
+    color: #d4a373;
+    margin-bottom: 1.5em;
+}
+
+.map-placeholder {
+    background-color: #eee;
+    height: 450px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que el iframe no se desborde */
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilos del Footer */
+footer {
+    background-color: #523d2a;
+    color: white;
+    text-align: center;
+    padding: 1.5em 2em;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .social a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    transition: transform 0.2s ease;
+}
+
+footer .social a:hover {
+    transform: scale(1.1);
+}
+
+/* Botón flotante de carrito */
+.cart-float-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d4a373;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-float-button:hover {
+    background-color: #b8860b;
+    transform: translateY(-3px);
+}
+
+.cart-float-button .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    font-size: 0.6em;
+    border-radius: 50%;
+    padding: 0.3em 0.6em;
+}
+
+/* Botón flotante de Login/Registro */
+.login-float-button {
+    position: fixed;
+    bottom: 90px; /* Más arriba que el botón del carrito */
+    right: 20px;
+    background-color: #523d2a; /* Color diferente para distinguirlo */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Mismo z-index que el carrito para que se vean bien */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+.login-float-button:hover {
+    background-color: #3e3126;
+    transform: translateY(-3px);
+}
+
+
+/* Estilos para el login-container (si se usa como modal flotante en index.html) */
+/* Este div debería tener display: none; por defecto en el HTML para no interferir */
+#login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1002; /* Más alto que los botones flotantes y otros elementos */
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    /* display: none; ya se establece en el HTML, pero se mantiene la precaución */
+}
+
+#login-container h3 {
+    color: #d4a373;
+    margin-bottom: 20px;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #523d2a;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#login-form button {
+    background-color: #d4a373;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#login-form button:hover {
+    background-color: #b8860b;
+}
+
+.login-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Estilos para la página de autenticación (login.html - que es una página separada) */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f0e3;
+    padding: 2em;
+}
+
+.auth-forms {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.auth-form {
+    transition: all 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #523d2a;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.auth-toggle {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.auth-toggle button {
+    background: none;
+    border: none;
+    color: #d4a373;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-form button[type="submit"] {
+    background-color: #d4a373;
+    color: white;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.auth-form button[type="submit"]:hover {
+    background-color: #b8860b;
+}
+
+.password-container {
+    position: relative;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding-right: 0.8em; /* Espacio para el ojo */
+}
+
+.input-with-icon input {
+    border: none; /* Elimina el borde del input interno */
+    flex-grow: 1;
+    padding: 0.8em;
+    /* Asegúrate de que el input tenga un padding-right si el ojo está dentro */
+}
+
+.password-toggle {
+    cursor: pointer;
+    color: #666;
+    margin-left: 0.5em;
+}
+
+/* --- Estilos para la Sección "Sobre Nosotros" --- */
+/* Estos estilos ya te los había dado, son para que la sección sea responsiva y se vea bien. */
+.nosotros-container {
+    padding: 3em 2em;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 3em auto;
+    position: relative;
+    z-index: 500; /* Un z-index intermedio para asegurar que esté sobre el contenido normal pero debajo de modales/flotantes */
+}
+
+.nosotros-container h2 {
+    text-align: center;
+    color: #d4a373;
+    font-size: 2.8em;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.introduccion-nosotros,
+.conclusion-nosotros {
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #523d2a;
+    margin-bottom: 2em;
+    padding: 0 1em;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2em;
+    margin-top: 2em;
+}
+
+@media (min-width: 768px) {
+    .nosotros-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .nosotros-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.nosotros-item {
+    background-color: #fefefe;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.nosotros-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.nosotros-img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+    border: 3px solid #d4a373;
+}
+
+.nosotros-item h3 {
+    color: #b8860b;
+    font-size: 1.4em;
+    margin-bottom: 0.8em;
+}
+
+.nosotros-item p {
+    text-align: justify;
+    font-size: 1em;
+    line-height: 1.7;
+    color: #666;
+    flex-grow: 1;
+}
+
+/* Estilos para el botón de cerrar la sección "Sobre Nosotros" */
+.cerrar-nosotros {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10; /* Asegura que esté por encima del contenido de la sección */
+}
+
+.cerrar-nosotros:hover {
+    background-color: #b8860b;
+    transform: rotate(90deg);
+}
+
+/* Media Queries Generales (si necesitas ajustes más específicos para responsive) */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav ul {
+        margin-top: 1em;
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul li {
+        margin: 5px 0;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+    .productos-destacados .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste para móviles */
+    }
+    .mapa-ubicacion .map-placeholder {
+        height: 300px; /* Altura más pequeña en móviles */
+    }
+}
