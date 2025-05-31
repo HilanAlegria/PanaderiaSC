@@ -4,7 +4,7 @@ package com.example.API_Panaderia.SC.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "admis") // Nombre de la colección en MongoDB
+@Document(collection = "Admis") // Nombre de la colección en MongoDB
 public class Admi {
     @Id
     private String id; // Campo ID de MongoDB, suele ser un String para ObjectId

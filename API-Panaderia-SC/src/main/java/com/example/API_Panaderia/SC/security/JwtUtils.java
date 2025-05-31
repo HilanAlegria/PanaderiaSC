@@ -24,7 +24,7 @@ public class JwtUtils {
     private String jwtSecret;
 
     @Value("${app.jwt.expiration}")
-    private int jwtExpirationMs;
+    private long jwtExpirationMs;
 
     @Value("${app.jwt.issuer}")
     private String jwtIssuer;
@@ -73,4 +73,5 @@ public class JwtUtils {
         byte[] keyBytes = Decoders.BASE64.decode(jwtSecret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
 }

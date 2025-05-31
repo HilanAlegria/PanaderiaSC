@@ -26,10 +26,13 @@ public class SecurityConfig {
     @Autowired
     private AuthEntryPointJwt unauthorizedHandler; // Tu manejador de no autorizado
 
+    @Autowired
+    private JwtUtils jwtUtils;
+
     // Bean para el filtro JWT
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {
-        return new AuthTokenFilter();
+        return new AuthTokenFilter(jwtUtils, userDetailsService);
     }
 
     // Bean para el codificador de contraseñas (BCrypt)
@@ -64,6 +67,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll() // Permite acceso público a rutas de autenticación (registro, login)
                 .requestMatchers("/api/test/**").permitAll() // Opcional: si tienes rutas de prueba públicas
                 .anyRequest().authenticated() // Todas las demás rutas requieren autenticación
+//                            .anyRequest().permitAll()
             );
 
         http.authenticationProvider(authenticationProvider()); // Usa tu proveedor de autenticación

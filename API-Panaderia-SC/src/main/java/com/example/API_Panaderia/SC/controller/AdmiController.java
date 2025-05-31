@@ -32,6 +32,11 @@ public class AdmiController {
         return new ResponseEntity<>(admis, HttpStatus.OK);
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<String> getExample() {
+        return new ResponseEntity<>("HILAN ES UN VENECO", HttpStatus.OK);
+    }
+
     // Obtener un administrador por ID
     @GetMapping("/{id}")
     public ResponseEntity<Admi> getAdmiById(@PathVariable String id) {

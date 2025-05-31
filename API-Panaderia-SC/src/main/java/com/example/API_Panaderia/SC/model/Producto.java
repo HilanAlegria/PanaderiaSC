@@ -3,7 +3,7 @@ package com.example.API_Panaderia.SC.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "productos") 
+@Document(collection = "Productos")
 public class Producto {
     @Id
     private String id;

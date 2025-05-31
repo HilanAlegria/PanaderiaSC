@@ -20,15 +20,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // Busca el usuario en MongoDB por el nombre de usuario
-        Usuario usuario = usuarioRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado con username: " + username));
-
-        return new org.springframework.security.core.userdetails.User(
-                usuario.getUsername(), // Usa el getter correcto según tu clase Usuario
-                usuario.getPassword(),
-                new ArrayList<>(), // Cambia esto si tienes roles específicos
-                new ArrayList<>() // Ejemplo: roles vacíos por ahora
-        );
+        Usuario usuario = usuarioRepository.findByUsername(username);
+        if (usuario == null) {
+            throw new UsernameNotFoundException("Usuario no encontrado: " + username);
+        }
+        return new UserDetailsImpl(usuario);
     }
+
 }

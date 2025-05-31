@@ -3,11 +3,12 @@ package com.example.API_Panaderia.SC.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "usuarios") 
+@Document(collection = "Usuarios")
 public class Usuario {
     @Id
     private String id;
     private String nombre;
+    private String username;
     private String email;
     private String password; 
     private String direccion;
@@ -37,4 +38,6 @@ public class Usuario {
     public void setDireccion(String direccion) { this.direccion = direccion; }
     public String getTelefono() { return telefono; }
     public void setTelefono(String telefono) { this.telefono = telefono; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
 }

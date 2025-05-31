@@ -4,6 +4,7 @@ import com.example.API_Panaderia.SC.model.Usuario;
 import com.example.API_Panaderia.SC.repository.UsuarioRepository;
 import com.example.API_Panaderia.SC.security.JwtUtils;
 import com.example.API_Panaderia.SC.security.UserDetailsImpl;
+import com.example.API_Panaderia.SC.security.UserDetailsServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,11 +18,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "https://hilanalegria.github.io/PanaderiaSC/")
+@CrossOrigin(origins = "*") // Permitir solicitudes desde cualquier origen
 @RequiredArgsConstructor
 public class AuthController {
 
@@ -29,11 +31,12 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtUtils jwtUtils;
+    private final UserDetailsServiceImpl userDetailsServiceImpl;
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegistroRequest registroRequest) {
-        if (usuarioRepository.findByUsername(registroRequest.getUsername()).isPresent()) {
-            return ResponseEntity.badRequest().body("Error: El nombre de usuario ya está en uso!");
+        if (usuarioRepository.findByUsername(registroRequest.getUsername())  != null) {
+            return ResponseEntity.badRequest().body("Error: El nombree d usuario ya está en uso!");
         }
 
         if (usuarioRepository.findByEmail(registroRequest.getEmail()).isPresent()) {
@@ -44,7 +47,7 @@ public class AuthController {
         nuevoUsuario.setUsername(registroRequest.getUsername());
         nuevoUsuario.setEmail(registroRequest.getEmail());
         nuevoUsuario.setPassword(passwordEncoder.encode(registroRequest.getPassword()));
-        nuevoUsuario.setRoles(List.of("ROLE_USER")); // Rol por defecto
+//        nuevoUsuario.setRoles(List.of("ROLE_USER")); // Rol por defecto
 
         usuarioRepository.save(nuevoUsuario);
         
@@ -61,23 +64,27 @@ public class AuthController {
                     loginRequest.getPassword()
                 )
             );
+            System.out.println("Autenticación exitosa para el usuario: " + authentication.getName());
 
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            String jwt = jwtUtils.generateJwtToken(authentication);
+           // SecurityContextHolder.getContext().setAuthentication(authentication);
+//           String jwt = jwtUtils.generateJwtToken(authentication);
             
             UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-            List<String> roles = userDetails.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList());
-
-            return ResponseEntity.ok(new JwtResponse(
-                jwt,
-                userDetails.getId(),
-                userDetails.getUsername(),
-                userDetails.getEmail(),
-                roles
+            Usuario usuario = userDetails.getUsuario();
+//            System.out.println("Usuario autenticado: " + usuario.getUsername());
+//            List<String> roles = userDetails.getAuthorities().stream()
+//                .map(GrantedAuthority::getAuthority)
+//                .collect(Collectors.toList());
+            return ResponseEntity.ok(Map.of(
+//                "token", jwt,
+                "username", usuario.getUsername(),
+                "email", usuario.getEmail(),
+                "id", usuario.getId()
+                // "roles", roles // Si decides usar roles en el futuro
             ));
+
         } catch (Exception e) {
+            System.out.println("Error de autenticación: " + e.getMessage());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body("Error: Credenciales inválidas");
         }
