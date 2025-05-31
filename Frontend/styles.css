@@ -89,7 +89,7 @@ header nav ul li a:hover {
 
 /* Estilos del Hero Section */
 .hero {
-    background: url('imagenes/hero-bakery.jpg') no-repeat center center/cover;
+    background: url('imagenes/Fondo pan.png') no-repeat center center/cover; /* CAMBIO AQUÍ: IMAGEN ESPECIFICADA */
     color: white;
     text-align: center;
     padding: 8em 2em;
@@ -413,102 +413,6 @@ footer .social a:hover {
     font-weight: bold;
 }
 
-/* Estilos para la página de autenticación (login.html - que es una página separada) */
-.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f8f0e3;
-    padding: 2em;
-}
-
-.auth-forms {
-    background-color: white;
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-}
-
-.auth-form {
-    transition: all 0.3s ease;
-}
-
-.form-group {
-    margin-bottom: 1em;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5em;
-    color: #523d2a;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.8em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.auth-toggle {
-    text-align: center;
-    margin-top: 1.5em;
-}
-
-.auth-toggle button {
-    background: none;
-    border: none;
-    color: #d4a373;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.auth-form button[type="submit"] {
-    background-color: #d4a373;
-    color: white;
-    padding: 0.8em 1.5em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    width: 100%;
-    margin-top: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.auth-form button[type="submit"]:hover {
-    background-color: #b8860b;
-}
-
-.password-container {
-    position: relative;
-}
-
-.input-with-icon {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding-right: 0.8em; /* Espacio para el ojo */
-}
-
-.input-with-icon input {
-    border: none; /* Elimina el borde del input interno */
-    flex-grow: 1;
-    padding: 0.8em;
-    /* Asegúrate de que el input tenga un padding-right si el ojo está dentro */
-}
-
-.password-toggle {
-    cursor: pointer;
-    color: #666;
-    margin-left: 0.5em;
-}
-
 /* --- Estilos para la Sección "Sobre Nosotros" --- */
 /* Estos estilos ya te los había dado, son para que la sección sea responsiva y se vea bien. */
 .nosotros-container {
@@ -542,7 +446,7 @@ footer .social a:hover {
 
 .nosotros-grid {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 2em;
     margin-top: 2em;
 }
@@ -563,8 +467,6 @@ footer .social a:hover {
     background-color: #fefefe;
     border: 1px solid #eee;
     border-radius: 8px;
-    padding: 1.5em;
-    text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;

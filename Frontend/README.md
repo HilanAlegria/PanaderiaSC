@@ -1,10 +1,10 @@
 Sitio Web - Panadería Sabor Caleño
 
-Última Actualización: 31 de Mayo de 2025
+Última Actualización: 24 de Mayo de 2025
 
 Autor: Hilan Eduardo Alegria Yate
 
-Despliegue: 
+Despliegue: https://hilanalegria.github.io/PanaderiaSC/
 
 Introducción Este proyecto es una página web desarrollada para la panadería Sabor Caleño, ubicada en Cali, Colombia. El objetivo es ofrecer una plataforma informativa e interactiva para que los clientes puedan conocer el menú, la historia de la panadería y realizar pedidos de manera sencilla.
 
@@ -36,6 +36,8 @@ Mapa (placeholder): Ubicación de la panadería en Cali.
 
 Botones Sociales y de Pedido: Acceso directo a WhatsApp, Facebook e Instagram.
 
+Icono flotante de WhatsApp: Acceso rápido desde cualquier parte del sitio.
+
 Contenido Dinámico Menú (menu.html) y Sobre Nosotros (nosotros-contenido.html) se cargan con fetch() sin recargar la página.
 
 Navegación fluida con scrollIntoView() y botón para cerrar secciones.
@@ -52,8 +54,10 @@ Componentes personalizados: Hero, secciones destacadas, tarjetas de productos.
 
 Iconos y botones responsivos.
 
+Estilo especial para el ícono de WhatsApp flotante.
+
 Seccion: "iniciar sesion/registro": se implementa una nueva ventana para el registro del usuario en la pagina, las opciones son registrarse como nuevo usuario, asi como ingresar un usuario anteriormente guardado.
 
-nuevo diseño ahora más centrado en que el usuario pueda ver de mejor manera los productos y la informacion de la pagina
+falta: agregar opcion de administrador y accesibilidad y adaptabilidad 
 
 Contacto Desarrollador: Hilan Eduardo Alegria Yate, gemini y Diosito
