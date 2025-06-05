@@ -1,0 +1,113 @@
+.menu-principal {
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+.menu-principal h2 {
+    text-align: center;
+    color: #d4a373;
+    margin-bottom: 1.5em;
+    font-size: 2.8em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+}
+
+
+@media (min-width: 992px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #333;
+    font-size: 1.3em;
+}
+
+.menu-item p {
+    color: #666;
+    margin-bottom: 0.5em;
+    flex-grow: 1;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.menu-item .precio {
+    font-weight: bold;
+    color: #e44d26;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.menu-item .agregar-carrito {
+    background-color: #d4a373;
+    color: white;
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    width: 90%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.menu-item .agregar-carrito:hover {
+    background-color: #b8860b;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,126 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background-image: url('../imagenes/Fondo\ pan.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    position: relative;
+    padding: 2em;
+    z-index: 1;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.auth-forms {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 500px;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+
+.auth-forms h2 {
+    color: #d4a373;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    color: #523d2a;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+.password-container {
+    position: relative;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding-right: 0.8em;
+}
+
+.input-with-icon input {
+    border: none;
+    flex-grow: 1;
+    padding: 1em;
+}
+
+.password-toggle {
+    cursor: pointer;
+    color: #666;
+    margin-left: 0.5em;
+}
+
+.auth-form button[type="submit"] {
+    background-color: #d4a373;
+    color: white;
+    padding: 1em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 100%;
+    margin-top: 1.5em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-form button[type="submit"]:hover {
+    background-color: #b8860b;
+    transform: translateY(-2px);
+}
+
+.auth-toggle {
+    margin-top: 2em;
+    font-size: 1.1em;
+}
+
+.auth-toggle button {
+    background: none;
+    border: none;
+    color: #d4a373;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.auth-toggle button:hover {
+    color: #b8860b;
+}
