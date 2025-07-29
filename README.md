@@ -2,7 +2,7 @@
 
 ## Última Actualización: 05 de Junio de 2025
 
-## Autores: Hilan Eduardo Alegría Yate / Juan Stevan Zamora Rengifo / Said David Gutierrez Agredo
+## Autores: Hilan Eduardo Alegría Yate 
             
 
 ## Despliegue: [https://hilanalegria.github.io/PanaderiaSC/](https://hilanalegria.github.io/PanaderiaSC/)
